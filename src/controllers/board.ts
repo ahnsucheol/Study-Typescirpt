@@ -21,16 +21,17 @@ export class BoardController {
     const { board_id, title, content } = req.body;
     const board: BoardChangeDto = { board_id, title, content };
     const token: any = req.headers.token;
-    try {
-      const data: object = await this.boardService.updateBoard(token, board);
-      console.log("updateBoardController: ", data);
-      res.status(201).json({ message: "Update Board Success", data: data });
-    } catch (err) {
-      console.log(err);
-      res.status(err.status || 500).json(err.message);
-    } finally {
-      console.log("끝"); //안되네,,,
-    }
+    // try {
+    const data: object = await this.boardService.updateBoard(token, board);
+    console.log("updateBoardController: ", data);
+    res.status(201).json({ message: "Update Board Success", data: data });
+    // } catch (err: any) {
+    //   console.log("error");
+    //   // console.log(err);
+    //   res.status(err.status || 500).json(err.message);
+    // } finally {
+    //   console.log("끝"); //안되네,,,
+    // }
   };
 
   getAllBoard = async (_req: Request, res: Response) => {

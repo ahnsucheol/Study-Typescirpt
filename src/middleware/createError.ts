@@ -1,7 +1,8 @@
-export class NotExistError extends Error {
+class NotExistError extends Error {
   private status: number;
 
   constructor(message: string) {
+    console.log("err");
     super(message);
     this.status = 404;
   }
@@ -17,4 +18,4 @@ export class NotExistError extends Error {
 //   }
 // }
 
-// export { NotExistError };
+export { NotExistError };

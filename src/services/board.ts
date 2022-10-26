@@ -32,6 +32,7 @@ class CorrectUser {
     if (exists[0].SUCCESS === "0") {
       console.log("sdfsdf");
       const err = new NotExistError("You are not Writer!! 제발 보내줘,,,,");
+      console.log("err: ", err);
       throw err;
       // throw new Error("dpfjdpfj");
     }
